@@ -1,0 +1,105 @@
+{
+  "name": "Organizational Culture and DevOps: Securing Management Buy-In for Enhanced Delivery",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to Organizational Culture and DevOps",
+      "videos": [
+        { "name": "Understanding Organizational Culture" },
+        { "name": "Overview of DevOps Principles" },
+        { "name": "The Importance of Management Buy-In" },
+        { "name": "Benefits of DevOps for Organizations" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of DevOps",
+      "videos": [
+        { "name": "What is DevOps?" },
+        { "name": "Key DevOps Practices and Tools" },
+        { "name": "The DevOps Lifecycle" },
+        { "name": "Common Challenges in DevOps Adoption" },
+        { "name": "Integrating DevOps into Existing Workflows" }
+      ]
+    },
+    {
+      "name": "Section 3: The Role of Management in DevOps Success",
+      "videos": [
+        { "name": "Understanding Management’s Perspective" },
+        { "name": "The Impact of Leadership on DevOps Implementation" },
+        { "name": "Aligning DevOps Goals with Business Objectives" },
+        { "name": "Communicating the Value of DevOps to Management" },
+        { "name": "Case Studies: Successful Management Buy-In" }
+      ]
+    },
+    {
+      "name": "Section 4: Building a Business Case for DevOps",
+      "videos": [
+        { "name": "Identifying Organizational Pain Points" },
+        { "name": "Quantifying the Benefits of DevOps" },
+        { "name": "Developing a Persuasive Business Case" },
+        { "name": "Presenting the Business Case to Management" },
+        { "name": "Addressing Management Concerns and Objections" }
+      ]
+    },
+    {
+      "name": "Section 5: Strategies for Securing Management Buy-In",
+      "videos": [
+        { "name": "Engaging Key Stakeholders" },
+        { "name": "Leveraging Influencers within the Organization" },
+        { "name": "Creating Pilot Programs and Demonstrating Quick Wins" },
+        { "name": "Building Trust through Transparency and Communication" },
+        { "name": "Continuous Engagement and Feedback Loops" }
+      ]
+    },
+    {
+      "name": "Section 6: Cultivating a DevOps Culture",
+      "videos": [
+        { "name": "Characteristics of a DevOps Culture" },
+        { "name": "Encouraging Collaboration and Communication" },
+        { "name": "Fostering Innovation and Continuous Improvement" },
+        { "name": "Overcoming Resistance to Change" },
+        { "name": "Case Studies: Transforming Organizational Culture" }
+      ]
+    },
+    {
+      "name": "Section 7: Implementing DevOps with Management Support",
+      "videos": [
+        { "name": "Planning and Executing a DevOps Strategy" },
+        { "name": "Establishing Clear Roles and Responsibilities" },
+        { "name": "Integrating DevOps Tools and Practices" },
+        { "name": "Monitoring and Measuring Success" },
+        { "name": "Adapting and Scaling DevOps Initiatives" }
+      ]
+    },
+    {
+      "name": "Section 8: Sustaining Management Buy-In",
+      "videos": [
+        { "name": "Maintaining Momentum Post-Implementation" },
+        { "name": "Regularly Communicating Progress and Achievements" },
+        { "name": "Addressing Challenges and Iterating on Processes" },
+        { "name": "Celebrating Successes and Recognizing Contributions" },
+        { "name": "Ensuring Continuous Alignment with Business Goals" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in DevOps",
+      "videos": [
+        { "name": "Emerging Trends in DevOps and Organizational Culture" },
+        { "name": "Career Paths in DevOps and Leadership" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning and Development" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Techniques for Management Buy-In in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the DevOps and Leadership Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}

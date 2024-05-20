@@ -1,0 +1,105 @@
+{
+  "name": "Version Control in DevOps: Tying Commits to Tasks for Enhanced Delivery",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to SCM and DevOps",
+      "videos": [
+        { "name": "Understanding Version Control Systems (VCS)" },
+        { "name": "Overview of DevOps Principles" },
+        { "name": "The Importance of Task-Linked Commits" },
+        { "name": "Benefits of Effective Version Control in DevOps" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of Version Control",
+      "videos": [
+        { "name": "What is Version Control?" },
+        { "name": "Key Version Control Concepts" },
+        { "name": "Popular Version Control Systems: Git, SVN, etc." },
+        { "name": "The Role of Commits in Version Control" },
+        { "name": "Basic Version Control Commands and Operations" }
+      ]
+    },
+    {
+      "name": "Section 3: Understanding Task-Linked Commits",
+      "videos": [
+        { "name": "What are Task-Linked Commits?" },
+        { "name": "The Importance of Linking Commits to Tasks" },
+        { "name": "How Task-Linked Commits Improve Traceability" },
+        { "name": "Examples of Task-Linked Commits in Action" },
+        { "name": "Case Studies: Impact on Delivery Efficiency" }
+      ]
+    },
+    {
+      "name": "Section 4: Best Practices for Task-Linked Commits",
+      "videos": [
+        { "name": "Writing Clear and Descriptive Commit Messages" },
+        { "name": "Using Task IDs in Commit Messages" },
+        { "name": "Structuring Commits to Reflect Task Progress" },
+        { "name": "Reviewing and Approving Task-Linked Commits" },
+        { "name": "Common Mistakes and How to Avoid Them" }
+      ]
+    },
+    {
+      "name": "Section 5: Tools and Technologies for Managing Commits",
+      "videos": [
+        { "name": "Overview of Version Control Tools" },
+        { "name": "Integrating Version Control with DevOps Pipelines" },
+        { "name": "Using Project Management Tools to Link Tasks and Commits" },
+        { "name": "Automation Tools for Enforcing Task-Linked Commits" },
+        { "name": "Troubleshooting Common Issues" }
+      ]
+    },
+    {
+      "name": "Section 6: Building a Culture of Task-Linked Commits",
+      "videos": [
+        { "name": "Encouraging Team Collaboration" },
+        { "name": "Establishing Commit and Task Linking Guidelines" },
+        { "name": "Training Teams on Best Practices" },
+        { "name": "Overcoming Resistance to Change" },
+        { "name": "Case Studies: Successful Implementations" }
+      ]
+    },
+    {
+      "name": "Section 7: Implementing Task-Linked Commits in DevOps",
+      "videos": [
+        { "name": "Planning and Executing a Commit Strategy" },
+        { "name": "Establishing Clear Roles and Responsibilities" },
+        { "name": "Integrating Task-Linked Commits into CI/CD Pipelines" },
+        { "name": "Monitoring and Measuring Effectiveness" },
+        { "name": "Adapting and Scaling Practices" }
+      ]
+    },
+    {
+      "name": "Section 8: Enhancing Delivery with Task-Linked Commits",
+      "videos": [
+        { "name": "Improving Workflow and Reducing Bottlenecks" },
+        { "name": "Ensuring High-Quality Deliverables" },
+        { "name": "Accelerating Delivery Times" },
+        { "name": "Increasing Team Productivity and Morale" },
+        { "name": "Real-World Examples of Enhanced Delivery" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in DevOps and SCM",
+      "videos": [
+        { "name": "Emerging Trends in Version Control and DevOps" },
+        { "name": "Career Paths in DevOps and Version Control" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning and Development" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Task-Linked Commit Techniques in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the DevOps and Version Control Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}

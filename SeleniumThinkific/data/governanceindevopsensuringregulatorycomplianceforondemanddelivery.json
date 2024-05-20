@@ -1,0 +1,105 @@
+{
+  "name": "Governance in DevOps: Ensuring Regulatory Compliance for On-Demand Delivery",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to Governance and Regulatory Compliance",
+      "videos": [
+        { "name": "Understanding Governance in DevOps" },
+        { "name": "The Importance of Regulatory Compliance" },
+        { "name": "Key Compliance Regulations (GDPR, HIPAA, etc.)" },
+        { "name": "The Role of Compliance in DevOps" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of DevOps",
+      "videos": [
+        { "name": "Overview of DevOps Principles" },
+        { "name": "DevOps Lifecycle Stages" },
+        { "name": "Benefits of DevOps for Organizations" },
+        { "name": "Common Challenges in DevOps" },
+        { "name": "Integrating Governance into DevOps" }
+      ]
+    },
+    {
+      "name": "Section 3: Setting Up a Compliance-Driven DevOps Environment",
+      "videos": [
+        { "name": "Tools and Technologies for Compliance" },
+        { "name": "Configuring Compliance Tools in DevOps Pipelines" },
+        { "name": "Best Practices for Compliance Setup" },
+        { "name": "Automating Compliance Checks" },
+        { "name": "Troubleshooting Compliance Issues" }
+      ]
+    },
+    {
+      "name": "Section 4: Key Compliance Areas in DevOps",
+      "videos": [
+        { "name": "Data Privacy and Protection" },
+        { "name": "Security Standards and Protocols" },
+        { "name": "Software Development and Testing Standards" },
+        { "name": "Infrastructure Compliance" },
+        { "name": "Case Studies: Compliance Successes" }
+      ]
+    },
+    {
+      "name": "Section 5: Implementing Compliance Policies and Procedures",
+      "videos": [
+        { "name": "Developing Compliance Policies" },
+        { "name": "Establishing Procedures for Compliance" },
+        { "name": "Training and Educating Teams" },
+        { "name": "Monitoring and Auditing Compliance" },
+        { "name": "Examples of Effective Policies and Procedures" }
+      ]
+    },
+    {
+      "name": "Section 6: Continuous Integration and Continuous Deployment (CI/CD) with Compliance",
+      "videos": [
+        { "name": "Overview of CI/CD" },
+        { "name": "Integrating Compliance into CI/CD Pipelines" },
+        { "name": "Automating Compliance in Build and Release Processes" },
+        { "name": "Monitoring Compliance in CI/CD" },
+        { "name": "Case Studies of Compliance in CI/CD" }
+      ]
+    },
+    {
+      "name": "Section 7: Risk Management and Incident Response",
+      "videos": [
+        { "name": "Understanding Risk Management in DevOps" },
+        { "name": "Identifying and Assessing Risks" },
+        { "name": "Developing Incident Response Plans" },
+        { "name": "AI-Powered Incident Detection and Response" },
+        { "name": "Real-World Examples of Risk Management" }
+      ]
+    },
+    {
+      "name": "Section 8: Security and Compliance Automation",
+      "videos": [
+        { "name": "Security Challenges in DevOps" },
+        { "name": "AI and Automation for Threat Detection" },
+        { "name": "Implementing Automated Compliance Checks" },
+        { "name": "Best Practices for Secure DevOps Environments" },
+        { "name": "Case Studies of Security and Compliance Automation" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in DevOps Governance",
+      "videos": [
+        { "name": "Emerging Trends in DevOps Governance" },
+        { "name": "Career Paths in Regulatory Compliance" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Compliance Techniques in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the DevOps Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "name": "Organizational Culture and DevOps: Mastering Explicit Knowledge Transfer for Enhanced Delivery",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to Organizational Culture and DevOps",
+      "videos": [
+        { "name": "Understanding Organizational Culture" },
+        { "name": "Overview of DevOps Principles" },
+        { "name": "Importance of Knowledge Transfer in DevOps" },
+        { "name": "Benefits of Effective Knowledge Transfer" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of DevOps",
+      "videos": [
+        { "name": "What is DevOps?" },
+        { "name": "Key DevOps Practices and Tools" },
+        { "name": "The DevOps Lifecycle" },
+        { "name": "Common Challenges in DevOps" },
+        { "name": "Integrating Knowledge Transfer into DevOps" }
+      ]
+    },
+    {
+      "name": "Section 3: Understanding Explicit Knowledge Transfer",
+      "videos": [
+        { "name": "What is Explicit Knowledge?" },
+        { "name": "Differences Between Explicit and Tacit Knowledge" },
+        { "name": "The Role of Documentation in Knowledge Transfer" },
+        { "name": "Importance of Explicit Knowledge Transfer in DevOps" },
+        { "name": "Case Studies: Impact of Effective Knowledge Transfer" }
+      ]
+    },
+    {
+      "name": "Section 4: Techniques for Effective Knowledge Transfer",
+      "videos": [
+        { "name": "Creating Comprehensive Documentation" },
+        { "name": "Using Wikis and Knowledge Bases" },
+        { "name": "Conducting Effective Training Sessions" },
+        { "name": "Leveraging Code Comments and Annotations" },
+        { "name": "Regularly Updating Knowledge Repositories" }
+      ]
+    },
+    {
+      "name": "Section 5: Tools and Technologies for Knowledge Transfer",
+      "videos": [
+        { "name": "Overview of Knowledge Management Tools" },
+        { "name": "Integrating Knowledge Tools with DevOps Pipelines" },
+        { "name": "Using Collaboration Platforms for Knowledge Sharing" },
+        { "name": "Best Practices for Tool Configuration" },
+        { "name": "Troubleshooting Common Issues" }
+      ]
+    },
+    {
+      "name": "Section 6: Building a Culture of Knowledge Sharing",
+      "videos": [
+        { "name": "Encouraging Open Communication" },
+        { "name": "Establishing Regular Knowledge Sharing Sessions" },
+        { "name": "Training Teams on Documentation Best Practices" },
+        { "name": "Overcoming Resistance to Knowledge Sharing" },
+        { "name": "Case Studies: Successful Knowledge Sharing Cultures" }
+      ]
+    },
+    {
+      "name": "Section 7: Implementing Knowledge Transfer in DevOps",
+      "videos": [
+        { "name": "Planning and Executing a Knowledge Transfer Strategy" },
+        { "name": "Establishing Clear Roles and Responsibilities" },
+        { "name": "Integrating Knowledge Transfer into CI/CD Pipelines" },
+        { "name": "Monitoring and Measuring Knowledge Transfer Effectiveness" },
+        { "name": "Adapting and Scaling Knowledge Transfer Practices" }
+      ]
+    },
+    {
+      "name": "Section 8: Enhancing Delivery with Knowledge Transfer",
+      "videos": [
+        { "name": "Improving Workflow and Reducing Bottlenecks" },
+        { "name": "Ensuring High-Quality Deliverables" },
+        { "name": "Accelerating Delivery Times" },
+        { "name": "Increasing Team Productivity and Morale" },
+        { "name": "Real-World Examples of Enhanced Delivery" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in DevOps",
+      "videos": [
+        { "name": "Emerging Trends in DevOps and Knowledge Management" },
+        { "name": "Career Paths in DevOps and Knowledge Transfer" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning and Development" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Knowledge Transfer Techniques in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the DevOps and Knowledge Management Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}

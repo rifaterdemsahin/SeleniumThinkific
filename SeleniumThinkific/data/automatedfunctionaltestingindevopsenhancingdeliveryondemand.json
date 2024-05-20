@@ -1,0 +1,105 @@
+{
+  "name": "Automated Functional Testing in DevOps: Enhancing Delivery on Demand",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to DevOps and Automated Functional Testing",
+      "videos": [
+        { "name": "Understanding DevOps Principles" },
+        { "name": "Importance of Testing in DevOps" },
+        { "name": "What are Automated Functional Tests?" },
+        { "name": "Benefits of Automated Functional Testing for Delivery" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of Functional Testing",
+      "videos": [
+        { "name": "Key Concepts in Functional Testing" },
+        { "name": "Difference Between Functional Testing and Other Testing Types" },
+        { "name": "Writing Effective Functional Test Cases" },
+        { "name": "Common Challenges in Functional Testing" },
+        { "name": "Best Practices for Functional Testing" }
+      ]
+    },
+    {
+      "name": "Section 3: Setting Up Your Automated Testing Environment",
+      "videos": [
+        { "name": "Choosing the Right Tools and Frameworks" },
+        { "name": "Installing and Configuring Testing Tools" },
+        { "name": "Integrating Functional Testing with Version Control Systems" },
+        { "name": "Setting Up Continuous Integration for Functional Tests" },
+        { "name": "Best Practices for Environment Setup" }
+      ]
+    },
+    {
+      "name": "Section 4: Writing and Running Automated Functional Tests",
+      "videos": [
+        { "name": "Structuring Functional Tests for Readability and Maintainability" },
+        { "name": "Writing Test Scripts for Different Scenarios" },
+        { "name": "Executing Functional Tests Locally" },
+        { "name": "Automating Functional Tests in CI/CD Pipelines" },
+        { "name": "Analyzing Test Results and Coverage" }
+      ]
+    },
+    {
+      "name": "Section 5: Tools and Frameworks for Automated Functional Testing",
+      "videos": [
+        { "name": "Overview of Popular Functional Testing Tools (e.g., Selenium, Cypress, QTP)" },
+        { "name": "Integrating Testing Tools with DevOps Pipelines" },
+        { "name": "Using Mocking and Stubbing in Functional Tests" },
+        { "name": "Best Practices for Tool Configuration" },
+        { "name": "Troubleshooting Common Issues" }
+      ]
+    },
+    {
+      "name": "Section 6: Maintaining and Refactoring Automated Functional Tests",
+      "videos": [
+        { "name": "Keeping Tests Up-to-Date with Code Changes" },
+        { "name": "Refactoring Code and Tests Simultaneously" },
+        { "name": "Managing Test Debt and Legacy Tests" },
+        { "name": "Ensuring Consistent Test Performance" },
+        { "name": "Case Studies: Effective Test Maintenance" }
+      ]
+    },
+    {
+      "name": "Section 7: Building a Culture of Quality with Automated Testing",
+      "videos": [
+        { "name": "Encouraging Team Collaboration and Communication" },
+        { "name": "Establishing Guidelines and Standards for Automated Testing" },
+        { "name": "Training Teams on Best Practices for Automated Functional Testing" },
+        { "name": "Overcoming Resistance to Testing Automation" },
+        { "name": "Case Studies: Successful Adoption of Automated Functional Testing" }
+      ]
+    },
+    {
+      "name": "Section 8: Enhancing Delivery with Automated Functional Tests",
+      "videos": [
+        { "name": "Improving Workflow and Reducing Bottlenecks" },
+        { "name": "Ensuring High-Quality Software" },
+        { "name": "Accelerating Delivery Times with Automated Tests" },
+        { "name": "Increasing Team Productivity and Morale" },
+        { "name": "Real-World Examples of Enhanced Delivery with Automated Functional Testing" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in DevOps and Testing",
+      "videos": [
+        { "name": "Emerging Trends in Functional Testing and DevOps" },
+        { "name": "Career Paths in DevOps and Quality Assurance" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning and Development" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Automated Functional Testing Techniques in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the DevOps and QA Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}

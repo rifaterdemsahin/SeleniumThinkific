@@ -1,0 +1,105 @@
+{
+  "name": "Architecture & Design in DevOps: Creating Testable Code for Enhanced Delivery",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to DevOps and Testable Code",
+      "videos": [
+        { "name": "Understanding DevOps Principles" },
+        { "name": "The Role of Architecture and Design in DevOps" },
+        { "name": "Importance of Testable Code in Software Development" },
+        { "name": "Benefits of Testable Code for Delivery" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of Testable Code",
+      "videos": [
+        { "name": "What is Testable Code?" },
+        { "name": "Characteristics of Testable Code" },
+        { "name": "Key Concepts and Terminology" },
+        { "name": "Common Challenges in Writing Testable Code" },
+        { "name": "Best Practices for Testable Code" }
+      ]
+    },
+    {
+      "name": "Section 3: Setting Up Your Environment for Testable Code",
+      "videos": [
+        { "name": "Choosing the Right Tools and Frameworks" },
+        { "name": "Installing and Configuring Development Tools" },
+        { "name": "Integrating Testable Code Practices with Version Control Systems" },
+        { "name": "Setting Up Continuous Integration for Testable Code" },
+        { "name": "Best Practices for Environment Setup" }
+      ]
+    },
+    {
+      "name": "Section 4: Designing for Testability",
+      "videos": [
+        { "name": "Principles of Clean Code and SOLID Design" },
+        { "name": "Decoupling and Dependency Injection" },
+        { "name": "Designing Modular and Reusable Code" },
+        { "name": "Writing Effective Unit and Integration Tests" },
+        { "name": "Using Mocking and Stubbing Techniques" }
+      ]
+    },
+    {
+      "name": "Section 5: Tools and Technologies for Testable Code",
+      "videos": [
+        { "name": "Overview of Popular Development and Testing Tools (e.g., JUnit, Mockito, Jest)" },
+        { "name": "Integrating Development Tools with DevOps Pipelines" },
+        { "name": "Automating Testing and Code Quality Checks" },
+        { "name": "Best Practices for Tool Configuration" },
+        { "name": "Troubleshooting Common Issues" }
+      ]
+    },
+    {
+      "name": "Section 6: Refactoring Code for Testability",
+      "videos": [
+        { "name": "Identifying Untestable Code" },
+        { "name": "Strategies for Refactoring Legacy Code" },
+        { "name": "Implementing Continuous Refactoring Practices" },
+        { "name": "Ensuring Code Quality and Test Coverage" },
+        { "name": "Case Studies: Successful Refactoring Projects" }
+      ]
+    },
+    {
+      "name": "Section 7: Building a Culture of Quality with Testable Code",
+      "videos": [
+        { "name": "Encouraging Team Collaboration and Communication" },
+        { "name": "Establishing Guidelines and Standards for Testable Code" },
+        { "name": "Training Teams on Best Practices for Writing Testable Code" },
+        { "name": "Overcoming Resistance to Change" },
+        { "name": "Case Studies: Successful Adoption of Testable Code Practices" }
+      ]
+    },
+    {
+      "name": "Section 8: Enhancing Delivery with Testable Code",
+      "videos": [
+        { "name": "Improving Workflow and Reducing Bottlenecks" },
+        { "name": "Ensuring High-Quality Deliverables with Testable Code" },
+        { "name": "Accelerating Delivery Times with Continuous Testing" },
+        { "name": "Increasing Team Productivity and Morale" },
+        { "name": "Real-World Examples of Enhanced Delivery with Testable Code" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in DevOps and Testable Code",
+      "videos": [
+        { "name": "Emerging Trends in Code Testability and DevOps" },
+        { "name": "Career Paths in DevOps and Software Quality" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning and Development" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Testable Code Techniques in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the DevOps and Software Quality Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}

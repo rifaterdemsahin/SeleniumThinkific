@@ -1,0 +1,105 @@
+{
+  "name": "Testing in Production in DevOps: Ensuring Quality for Enhanced Delivery on Demand",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to DevOps and Testing in Production",
+      "videos": [
+        { "name": "Understanding DevOps Principles" },
+        { "name": "The Role of Testing in DevOps" },
+        { "name": "What is Testing in Production?" },
+        { "name": "Benefits of Testing in Production for Delivery" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of Testing in Production",
+      "videos": [
+        { "name": "Key Concepts of Testing in Production" },
+        { "name": "Types of Testing in Production: Canary Releases, A/B Testing, Blue-Green Deployments" },
+        { "name": "Challenges and Risks of Testing in Production" },
+        { "name": "Best Practices for Testing in Production" },
+        { "name": "Real-World Examples of Effective Testing in Production" }
+      ]
+    },
+    {
+      "name": "Section 3: Setting Up a Testing in Production Environment",
+      "videos": [
+        { "name": "Choosing the Right Tools and Frameworks" },
+        { "name": "Configuring Infrastructure for Testing in Production" },
+        { "name": "Integrating Testing with CI/CD Pipelines" },
+        { "name": "Setting Up Monitoring and Observability" },
+        { "name": "Best Practices for Environment Setup" }
+      ]
+    },
+    {
+      "name": "Section 4: Implementing Testing in Production",
+      "videos": [
+        { "name": "Designing Test Scenarios for Production" },
+        { "name": "Deploying Canary Releases" },
+        { "name": "Conducting A/B Tests" },
+        { "name": "Implementing Blue-Green Deployments" },
+        { "name": "Monitoring and Analyzing Test Results" }
+      ]
+    },
+    {
+      "name": "Section 5: Tools and Technologies for Testing in Production",
+      "videos": [
+        { "name": "Overview of Popular Testing Tools (e.g., Spinnaker, LaunchDarkly)" },
+        { "name": "Integrating Testing Tools with DevOps Pipelines" },
+        { "name": "Using Feature Flags and Toggles" },
+        { "name": "Best Practices for Tool Configuration" },
+        { "name": "Troubleshooting Common Issues" }
+      ]
+    },
+    {
+      "name": "Section 6: Monitoring and Observability in Production",
+      "videos": [
+        { "name": "Setting Up Real-Time Monitoring" },
+        { "name": "Using Observability Tools (e.g., Prometheus, Grafana, Splunk)" },
+        { "name": "Tracking Metrics and Logs" },
+        { "name": "Analyzing Production Data for Insights" },
+        { "name": "Responding to Incidents and Rollbacks" }
+      ]
+    },
+    {
+      "name": "Section 7: Building a Culture of Safe Testing in Production",
+      "videos": [
+        { "name": "Encouraging Team Collaboration and Communication" },
+        { "name": "Establishing Guidelines and Standards for Testing in Production" },
+        { "name": "Training Teams on Best Practices for Safe Testing" },
+        { "name": "Overcoming Resistance to Testing in Production" },
+        { "name": "Case Studies: Successful Adoption of Testing in Production" }
+      ]
+    },
+    {
+      "name": "Section 8: Enhancing Delivery with Testing in Production",
+      "videos": [
+        { "name": "Improving Workflow and Reducing Bottlenecks" },
+        { "name": "Ensuring High-Quality Software with Real-World Testing" },
+        { "name": "Accelerating Delivery Times with Continuous Feedback" },
+        { "name": "Increasing Team Productivity and Morale" },
+        { "name": "Real-World Examples of Enhanced Delivery with Testing in Production" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in DevOps and Testing",
+      "videos": [
+        { "name": "Emerging Trends in Testing in Production and DevOps" },
+        { "name": "Career Paths in DevOps and Quality Assurance" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning and Development" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Testing in Production Techniques in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the DevOps and QA Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}

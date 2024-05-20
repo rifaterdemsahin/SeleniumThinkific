@@ -1,0 +1,105 @@
+{
+  "name": "Organizational Culture and Agile Processes in DevOps: Boosting On-Demand Delivery",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to Organizational Culture and DevOps",
+      "videos": [
+        { "name": "Understanding Organizational Culture" },
+        { "name": "Overview of DevOps Principles" },
+        { "name": "The Role of Culture in DevOps Success" },
+        { "name": "Introduction to Agile Processes" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of Agile Methodologies",
+      "videos": [
+        { "name": "What is Agile?" },
+        { "name": "Key Agile Principles and Values" },
+        { "name": "Agile Frameworks: Scrum, Kanban, and More" },
+        { "name": "Benefits of Agile in DevOps" },
+        { "name": "Real-World Examples of Agile Success" }
+      ]
+    },
+    {
+      "name": "Section 3: Setting Up an Agile DevOps Environment",
+      "videos": [
+        { "name": "Tools and Technologies for Agile Implementation" },
+        { "name": "Configuring Agile Tools in DevOps Pipelines" },
+        { "name": "Best Practices for Agile Environment Setup" },
+        { "name": "Automating Agile Processes" },
+        { "name": "Troubleshooting Common Issues" }
+      ]
+    },
+    {
+      "name": "Section 4: Building an Agile Culture in DevOps",
+      "videos": [
+        { "name": "Characteristics of an Agile Culture" },
+        { "name": "Encouraging Collaboration and Communication" },
+        { "name": "Fostering Continuous Improvement" },
+        { "name": "Overcoming Resistance to Change" },
+        { "name": "Case Studies: Successful Agile Cultures" }
+      ]
+    },
+    {
+      "name": "Section 5: Agile Practices for DevOps Teams",
+      "videos": [
+        { "name": "Agile Planning and Estimation Techniques" },
+        { "name": "Implementing Iterative Development" },
+        { "name": "Continuous Integration and Continuous Deployment (CI/CD)" },
+        { "name": "Agile Testing and Quality Assurance" },
+        { "name": "Monitoring and Adapting Agile Practices" }
+      ]
+    },
+    {
+      "name": "Section 6: Scaling Agile in DevOps",
+      "videos": [
+        { "name": "Challenges of Scaling Agile" },
+        { "name": "Frameworks for Scaling Agile: SAFe, LeSS, and Nexus" },
+        { "name": "Aligning Multiple Teams" },
+        { "name": "Ensuring Consistent Delivery Across Teams" },
+        { "name": "Case Studies: Scaling Agile Successfully" }
+      ]
+    },
+    {
+      "name": "Section 7: Enhancing Delivery with Agile Metrics and KPIs",
+      "videos": [
+        { "name": "Importance of Metrics in Agile" },
+        { "name": "Key Agile Metrics and KPIs" },
+        { "name": "Using Data to Drive Decisions" },
+        { "name": "Monitoring Team Performance" },
+        { "name": "Case Studies: Improving Delivery with Metrics" }
+      ]
+    },
+    {
+      "name": "Section 8: Agile Leadership and Team Dynamics",
+      "videos": [
+        { "name": "The Role of Leadership in Agile" },
+        { "name": "Building and Leading Agile Teams" },
+        { "name": "Encouraging Self-Organization and Empowerment" },
+        { "name": "Resolving Conflicts and Challenges" },
+        { "name": "Real-World Examples of Agile Leadership" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in Agile DevOps",
+      "videos": [
+        { "name": "Emerging Trends in Agile and DevOps" },
+        { "name": "Career Paths in Agile and DevOps" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning and Development" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Agile Techniques in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the Agile and DevOps Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}

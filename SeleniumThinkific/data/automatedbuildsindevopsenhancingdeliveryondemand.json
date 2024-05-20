@@ -1,0 +1,105 @@
+{
+  "name": "Automated Builds in DevOps: Enhancing Delivery on Demand",
+  "sections": [
+    {
+      "name": "Section 1: Introduction to DevOps and Automated Builds",
+      "videos": [
+        { "name": "Understanding DevOps Principles" },
+        { "name": "The Importance of Automation in DevOps" },
+        { "name": "Overview of Build Processes" },
+        { "name": "Benefits of Automated Builds" },
+        { "name": "Course Objectives and Structure" }
+      ]
+    },
+    {
+      "name": "Section 2: Fundamentals of Build Automation",
+      "videos": [
+        { "name": "What is a Build Process?" },
+        { "name": "Key Concepts in Build Automation" },
+        { "name": "Common Tools for Automated Builds" },
+        { "name": "Basic Build Commands and Operations" },
+        { "name": "Real-World Examples of Automated Builds" }
+      ]
+    },
+    {
+      "name": "Section 3: Setting Up Automated Build Environments",
+      "videos": [
+        { "name": "Choosing the Right Build Automation Tools" },
+        { "name": "Installing and Configuring Build Tools" },
+        { "name": "Integrating Build Tools with Version Control Systems" },
+        { "name": "Setting Up Build Servers and Agents" },
+        { "name": "Best Practices for Environment Setup" }
+      ]
+    },
+    {
+      "name": "Section 4: Creating and Managing Build Pipelines",
+      "videos": [
+        { "name": "Designing Effective Build Pipelines" },
+        { "name": "Configuring Build Triggers and Jobs" },
+        { "name": "Managing Dependencies in Build Pipelines" },
+        { "name": "Implementing Parallel and Sequential Builds" },
+        { "name": "Monitoring and Maintaining Build Pipelines" }
+      ]
+    },
+    {
+      "name": "Section 5: Automating Testing in Build Pipelines",
+      "videos": [
+        { "name": "Importance of Automated Testing" },
+        { "name": "Integrating Unit Tests in Build Processes" },
+        { "name": "Running Integration and End-to-End Tests" },
+        { "name": "Analyzing Test Results and Reporting" },
+        { "name": "Ensuring Continuous Quality with Automated Testing" }
+      ]
+    },
+    {
+      "name": "Section 6: Handling Build Artifacts",
+      "videos": [
+        { "name": "Understanding Build Artifacts" },
+        { "name": "Managing Artifact Repositories" },
+        { "name": "Versioning and Storing Artifacts" },
+        { "name": "Distributing Artifacts to Different Environments" },
+        { "name": "Best Practices for Artifact Management" }
+      ]
+    },
+    {
+      "name": "Section 7: Troubleshooting and Optimizing Builds",
+      "videos": [
+        { "name": "Identifying Common Build Issues" },
+        { "name": "Debugging Build Failures" },
+        { "name": "Optimizing Build Performance" },
+        { "name": "Implementing Build Notifications and Alerts" },
+        { "name": "Continuous Improvement of Build Processes" }
+      ]
+    },
+    {
+      "name": "Section 8: Building a Culture of Automation in DevOps",
+      "videos": [
+        { "name": "Encouraging Team Collaboration and Communication" },
+        { "name": "Establishing Guidelines and Standards for Automation" },
+        { "name": "Training Teams on Build Automation Best Practices" },
+        { "name": "Overcoming Resistance to Automation" },
+        { "name": "Case Studies: Successful Automation Cultures" }
+      ]
+    },
+    {
+      "name": "Section 9: Future Trends and Career Opportunities in DevOps and Build Automation",
+      "videos": [
+        { "name": "Emerging Trends in Build Automation and DevOps" },
+        { "name": "Career Paths in DevOps and Build Engineering" },
+        { "name": "Skills and Certifications Required" },
+        { "name": "Building a Professional Network" },
+        { "name": "Resources for Continuous Learning and Development" }
+      ]
+    },
+    {
+      "name": "Conclusion and Next Steps",
+      "videos": [
+        { "name": "Recap of Key Learnings" },
+        { "name": "Applying Automated Build Techniques in Real Projects" },
+        { "name": "Further Reading and Educational Resources" },
+        { "name": "Engaging with the DevOps and Build Automation Community" },
+        { "name": "Final Q&A and Feedback" }
+      ]
+    }
+  ]
+}
