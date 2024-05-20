@@ -35,8 +35,9 @@ namespace SeleniumCourseLoader
             options.AddArgument(@"user-data-dir=C:\Users\Pexabo\AppData\Local\Google\Chrome\User Data"); // Replace with your Chrome user data path
             options.AddArgument(@"profile-directory=Profile 15"); // Replace with your profile directory
 
-            // Initialize the ChromeDriver
-            IWebDriver driver = new ChromeDriver(options);
+            // Initialize the ChromeDriver with a command timeout
+            var service = ChromeDriverService.CreateDefaultService();
+            var driver = new ChromeDriver(service, options, TimeSpan.FromMinutes(3)); // Set a 3-minute timeout for commands
             driver.Manage().Window.Size = new System.Drawing.Size(1273, 672);
 
             try
