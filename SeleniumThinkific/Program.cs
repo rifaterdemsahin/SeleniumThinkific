@@ -30,7 +30,7 @@ namespace SeleniumCourseLoader
 
             // Initialize the Chrome options chrome://version/
             ChromeOptions options = new ChromeOptions();
-            options.AddArgument(@"user-data-dir=C:\Users\Pexabo\AppData\Local\Google\Chrome\User Data\Profile 15"); // Replace with your Chrome user data path
+            options.AddArgument(@"user-data-dir=C:\Users\Pexabo\AppData\Local\Google\Chrome\User Data"); // Replace with your Chrome user data path
             options.AddArgument(@"profile-directory=Profile 15"); // Replace with your profile directory
 
 
