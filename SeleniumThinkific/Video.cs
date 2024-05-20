@@ -10,6 +10,8 @@ namespace SeleniumCourseLoader
     public class Section
     {
         public string Name { get; set; }
+        public string ChapterId { get; set; }
+        
         public List<Video> Videos { get; set; }
 
         public Section()
