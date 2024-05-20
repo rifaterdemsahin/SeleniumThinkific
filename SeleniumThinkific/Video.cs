@@ -20,6 +20,7 @@ namespace SeleniumCourseLoader
 
     public class CourseClass
     {
+        public string MainUrl { get; set; }
         public string Name { get; set; }
         public List<Section> Sections { get; set; }
 

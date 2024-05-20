@@ -10,31 +10,37 @@ namespace SeleniumCourseLoader
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Program started!");
             // Initialize the ChromeDriver
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Size = new System.Drawing.Size(1273, 672);
 
             try
             {
-                // Open the URL
-                driver.Navigate().GoToUrl("https://devopsengineering.thinkific.com/manage/courses/2776905");
-
-                // Click on the "Bulk importer" link
-                driver.FindElement(By.LinkText("Bulk importer")).Click();
-
                 // Get the course data
                 var folderPath = @"F:\source\SeleniumThinkific\SeleniumThinkific\data\";
                 var courses = CourseData.GetCourses(folderPath);
 
-                // Initialize WebDriverWait
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-                int sectionInputCounter = 5;
-                int videoInputCounter = 15; // Assuming different IDs for videos
+
 
                 // Loop through each course
                 foreach (var course in courses)
                 {
+                    // Open the URL
+                    driver.Navigate().GoToUrl(course.MainUrl);
+
+                    // Click on the "Bulk importer" link
+                    driver.FindElement(By.LinkText("Bulk importer")).Click();
+
+
+                    // Initialize WebDriverWait
+                    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+                    int sectionInputCounter = 5;
+                    int videoInputCounter = 15; // Assuming different IDs for videos
+
+
                     // Loop through the sections and videos
                     foreach (var section in course.Sections)
                     {
