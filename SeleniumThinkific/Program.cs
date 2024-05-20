@@ -23,7 +23,7 @@ namespace SeleniumCourseLoader
                 driver.FindElement(By.LinkText("Bulk importer")).Click();
 
                 // Get the course data
-                var folderPath = @"C:\path\to\your\json\folder";
+                var folderPath = @"F:\source\SeleniumThinkific\SeleniumThinkific\data\";
                 var courses = CourseData.GetCourses(folderPath);
 
                 // Initialize WebDriverWait
