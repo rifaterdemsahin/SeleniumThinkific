@@ -12,7 +12,8 @@ namespace SeleniumCourseLoader
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Program started!");
+            Logger.InitLogFile();
+            Logger.Log("Program started!");
 
             // Build configuration
             var builder = new ConfigurationBuilder()
@@ -25,7 +26,7 @@ namespace SeleniumCourseLoader
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                Console.WriteLine("Email or password are not set in the configuration file.");
+                Logger.Log("Email or password are not set in the configuration file.");
                 return;
             }
 
@@ -41,6 +42,7 @@ namespace SeleniumCourseLoader
             try
             {
                 // Navigate to login page
+                Logger.Log("Navigating to login page...");
                 driver.Navigate().GoToUrl("https://courses.devops.engineering/users/sign_in");
 
                 // Perform login
@@ -51,7 +53,7 @@ namespace SeleniumCourseLoader
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Test failed: {ex.Message}");
+                Logger.Log($"Test failed: {ex.Message}");
             }
             finally
             {
@@ -59,13 +61,14 @@ namespace SeleniumCourseLoader
                 driver.Quit();
             }
 
-            Console.WriteLine("Program ended!");
+            Logger.Log("Program ended!");
         }
 
         static void PerformLogin(IWebDriver driver, string email, string password)
         {
             try
             {
+                Logger.Log("Performing login...");
                 // Enter email and password, and click the sign-in button
                 driver.FindElement(By.Id("user[email]")).SendKeys(email);
                 driver.FindElement(By.Id("user[password]")).SendKeys(password);
@@ -77,15 +80,17 @@ namespace SeleniumCourseLoader
                 driver.FindElement(By.Id("user[password]")).SendKeys(password);
                 Thread.Sleep(5000);
                 driver.FindElement(By.CssSelector(".button-primary")).Click();
+                Logger.Log("Login performed successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Logger.Log($"Login failed: {ex.Message}");
             }
         }
 
         static void ProcessCourses(IWebDriver driver)
         {
+            Logger.Log("Processing courses...");
             // Get the course data
             var folderPath = @"F:\source\SeleniumThinkific\SeleniumThinkific\data\";
             var courses = CourseData.GetCourses(folderPath);
@@ -93,7 +98,7 @@ namespace SeleniumCourseLoader
             // Loop through each course
             foreach (var course in courses)
             {
-                Console.WriteLine(course.MainUrl);
+                Logger.Log($"Processing course: {course.MainUrl}");
                 driver.Navigate().GoToUrl(course.MainUrl);
                 Thread.Sleep(5000);
 
@@ -110,11 +115,12 @@ namespace SeleniumCourseLoader
                 }
             }
 
-            Console.WriteLine("Test completed successfully!");
+            Logger.Log("Courses processed successfully.");
         }
 
         static void AddChapter(IWebDriver driver, Section section)
         {
+            Logger.Log($"Adding chapter: {section.Name}");
             // Click on the "Add chapter" button
             driver.FindElement(By.CssSelector("button[data-qa='add-chapter__btn']")).Click();
             Thread.Sleep(1000);
@@ -136,7 +142,7 @@ namespace SeleniumCourseLoader
             string[] parts = url.Split('/');
             string chapterId = parts[parts.Length - 2]; // Second last part is the chapter ID
 
-            Console.WriteLine("Chapter ID: " + chapterId); // Output the chapter ID
+            Logger.Log($"Chapter ID: {chapterId}"); // Output the chapter ID
             Thread.Sleep(5000);
 
             section.ChapterId = chapterId; // Store the chapter ID for later use
@@ -144,6 +150,7 @@ namespace SeleniumCourseLoader
 
         static void AddVideo(IWebDriver driver, string mainUrl, Section section, Video video)
         {
+            Logger.Log($"Adding video: {video.Name} to section: {section.Name}");
             driver.Navigate().GoToUrl(mainUrl + "/chapters/" + section.ChapterId + "/contents/new_video_lesson");
             Thread.Sleep(7000);
 
@@ -170,7 +177,34 @@ namespace SeleniumCourseLoader
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Logger.Log($"Error handling toast message: {ex.Message}");
+            }
+        }
+    }
+
+    public static class Logger
+    {
+        private static string logFilePath = "logfile.txt";
+
+        public static void InitLogFile()
+        {
+            if (File.Exists(logFilePath))
+            {
+                File.Delete(logFilePath);
+            }
+            using (StreamWriter sw = File.CreateText(logFilePath))
+            {
+                sw.WriteLine($"Log file created on {DateTime.Now}");
+            }
+        }
+
+        public static void Log(string message)
+        {
+            string logMessage = $"{DateTime.Now}: {message}";
+            Console.WriteLine(logMessage);
+            using (StreamWriter sw = File.AppendText(logFilePath))
+            {
+                sw.WriteLine(logMessage);
             }
         }
     }
