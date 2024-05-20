@@ -61,9 +61,17 @@ namespace SeleniumCourseLoader
 
             // Enter password
             driver.FindElement(By.Id("user[password]")).SendKeys(password);
-
+            Thread.Sleep(5000);
             // Click the Sign In button
-            driver.FindElement(By.CssSelector(".button-primary")).Click();
+            try
+            {
+                driver.FindElement(By.CssSelector(".button-primary")).Click();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
 
             try
             {
@@ -73,6 +81,7 @@ namespace SeleniumCourseLoader
                 // Loop through each course
                 foreach (var course in courses)
                 {
+                    Console.WriteLine(course.MainUrl);
                     // Open the URL
                     driver.Navigate().GoToUrl(course.MainUrl);
 
@@ -95,8 +104,17 @@ namespace SeleniumCourseLoader
                         // Click on the "Add chapter" button
                         driver.FindElement(By.CssSelector(".add-chapter_uOzhc")).Click();
 
-                        // Wait for the "Successfully created a new chapter" toast message
-                        wait.Until(drv => drv.FindElement(By.CssSelector(".Toast_toast__message__176 > span")));
+                        try
+                        {
+                            // Wait for the "Successfully created a new chapter" toast message
+                            wait.Until(drv => drv.FindElement(By.CssSelector(".Toast_toast__message__176 > span")));
+                        }
+                        catch (Exception ex)
+                        {
+
+                            Console.WriteLine(ex.Message);
+                        }
+
 
                         // Input section details
                         string sectionInputId = $"input-{sectionInputCounter++}";
