@@ -43,25 +43,36 @@ namespace SeleniumCourseLoader
             // Set the window size
             driver.Manage().Window.Size = new System.Drawing.Size(1936, 1048);
 
-            // Enter email
-            driver.FindElement(By.Id("user[email]")).SendKeys(email);
+            try
+            {
+                // Enter email
+                driver.FindElement(By.Id("user[email]")).SendKeys(email);
 
-            // Enter password
-            driver.FindElement(By.Id("user[password]")).SendKeys(password);
+                // Enter password
+                driver.FindElement(By.Id("user[password]")).SendKeys(password);
 
-            // Click the Sign In button
-            driver.FindElement(By.CssSelector(".button-primary")).Click();
+                // Click the Sign In button
+                driver.FindElement(By.CssSelector(".button-primary")).Click();
 
-            // Wait for the login to complete 
-            //thinkific works in 2 presses lol
+                // Wait for the login to complete 
+                //thinkific works in 2 presses lol
 
-            Thread.Sleep(5000);
-            // Enter email
-            driver.FindElement(By.Id("user[email]")).SendKeys(email);
+                Thread.Sleep(5000);
+                // Enter email
+                driver.FindElement(By.Id("user[email]")).SendKeys(email);
 
-            // Enter password
-            driver.FindElement(By.Id("user[password]")).SendKeys(password);
-            Thread.Sleep(5000);
+                // Enter password
+                driver.FindElement(By.Id("user[password]")).SendKeys(password);
+                Thread.Sleep(5000);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+
+            }
+
+
             // Click the Sign In button
             try
             {
@@ -81,61 +92,73 @@ namespace SeleniumCourseLoader
                 // Loop through each course
                 foreach (var course in courses)
                 {
-                    Console.WriteLine(course.MainUrl);
+                Console.WriteLine(course.MainUrl);
                     // Open the URL
                     driver.Navigate().GoToUrl(course.MainUrl);
 
 
                     Thread.Sleep(5000);
-                    // Click on the "Bulk importer" link
-                    driver.FindElement(By.LinkText("Bulk importer")).Click();
-
-
-                    // Initialize WebDriverWait
-                    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-                    int sectionInputCounter = 5;
-                    int videoInputCounter = 15; // Assuming different IDs for videos
-
 
                     // Loop through the sections and videos
                     foreach (var section in course.Sections)
                     {
                         // Click on the "Add chapter" button
-                        driver.FindElement(By.CssSelector(".add-chapter_uOzhc")).Click();
-
-                        try
-                        {
-                            // Wait for the "Successfully created a new chapter" toast message
-                            wait.Until(drv => drv.FindElement(By.CssSelector(".Toast_toast__message__176 > span")));
-                        }
-                        catch (Exception ex)
-                        {
-
-                            Console.WriteLine(ex.Message);
-                        }
+                        driver.FindElement(By.CssSelector("button[data-qa='add-chapter__btn']")).Click();
 
 
                         // Input section details
-                        string sectionInputId = $"input-{sectionInputCounter++}";
-                        IWebElement sectionInputField = driver.FindElement(By.Id(sectionInputId));
+                        IWebElement sectionInputField = driver.FindElement(By.XPath("//input[@data-qa='chapter-name__input']"));
+                        // Add a small delay if necessary
+                        System.Threading.Thread.Sleep(500);
+
+                        // Use JavaScript to clear the input field
+                        IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                        js.ExecuteScript("arguments[0].value='';", sectionInputField);
+
+                        // Add a small delay if necessary
+                        System.Threading.Thread.Sleep(500);
+
+
                         sectionInputField.Clear();
+
+
                         sectionInputField.SendKeys(section.Name);
+                        IWebElement saveButton = driver.FindElement(By.CssSelector("button[data-qa='actions-bar__save-button']"));
+                        saveButton.Click();
+                        Thread.Sleep(5000);
+                        string url = driver.Url;
+                        string[] parts = url.Split('/');
+                        string chapterId = parts[parts.Length - 2]; // Second last part is the chapter ID
+
+                        Console.WriteLine("Chapterid:"+ chapterId); // Output: 12727700
+                        Thread.Sleep(5000);
+
 
                         // Loop through the videos in each section
                         foreach (var video in section.Videos)
                         {
-                            // Click on the "Add video" button
-                            driver.FindElement(By.CssSelector(".add-video-button")).Click(); // Assuming there's a button to add videos
+                            driver.Navigate().GoToUrl(course.MainUrl+ "/chapters/"+ chapterId + "/contents/new_video_lesson");
+                            Thread.Sleep(5000);
+
+                            // Locate the label using the CSS selector
+                            IWebElement labelForCheckbox = driver.FindElement(By.CssSelector("label[for='lesson-draft-status']"));
+
+                            // Click the label to toggle the checkbox
+                            labelForCheckbox.Click();
+
+                            // Perform other actions or assertions if needed
+
+
 
                             // Wait for the video input field to appear
-                            wait.Until(drv => drv.FindElement(By.CssSelector(".video-input-field"))); // Adjust selector as needed
+                            IWebElement videoInputField = driver.FindElement(By.CssSelector("input[data-qa='lesson-form__name']"));
 
-                            // Input video details
-                            string videoInputId = $"input-{videoInputCounter++}";
-                            IWebElement videoInputField = driver.FindElement(By.Id(videoInputId));
                             videoInputField.Clear();
                             videoInputField.SendKeys(video.Name);
+
+                            IWebElement saveVideoButton = driver.FindElement(By.XPath("//button[@data-qa='actions-bar__save-button']"));
+                            saveVideoButton.Click();
+                            Thread.Sleep(5000);
                         }
                     }
                 }
