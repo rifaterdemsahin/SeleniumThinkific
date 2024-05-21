@@ -234,6 +234,10 @@ namespace SeleniumCourseLoader
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("label[for='lesson-draft-status']"))).Click();
 
+
+
+
+
             // Input video details
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("input[data-qa='lesson-form__name']"))).SendKeys(video.Name);
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[@data-qa='actions-bar__save-button']"))).Click();
