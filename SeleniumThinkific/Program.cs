@@ -197,8 +197,19 @@ namespace SeleniumCourseLoader
             // Input section details
             IWebElement sectionInputField = driver.FindElement(By.XPath("//input[@data-qa='chapter-name__input']"));
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+
+            // Clear the field using JavaScript
             js.ExecuteScript("arguments[0].value='';", sectionInputField);
-            sectionInputField.Clear();
+
+            // Add a small delay
+            Thread.Sleep(100);
+
+            // Ensure the element is properly focused
+            sectionInputField.Click();
+            sectionInputField.SendKeys(Keys.Control + "a");
+            sectionInputField.SendKeys(Keys.Delete);
+
+            // Send new keys
             sectionInputField.SendKeys(section.Name);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button[data-qa='actions-bar__save-button']"))).Click();
