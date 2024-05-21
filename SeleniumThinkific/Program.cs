@@ -234,26 +234,26 @@ namespace SeleniumCourseLoader
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("label[for='lesson-draft-status']"))).Click();
 
+            // Locate the input field using XPath with the data-qa attribute
+            IWebElement sectionInputField = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@data-qa='lesson-form__name']")));
 
-           
-            IWebElement sectionInputField = driver.FindElement(By.XPath("input[data-qa='lesson-form__name']"));
+            // Initialize JavaScript Executor
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            
-            // Ensure the element is focused
-            js.ExecuteScript("arguments[0].focus();", sectionInputField);
-            // Clear the field using JavaScript
-            js.ExecuteScript("arguments[0].value='';", sectionInputField);
 
-            // Add a small delay
+            // Focus on the input field and clear its value using JavaScript
+            js.ExecuteScript("arguments[0].focus(); arguments[0].value='';", sectionInputField);
+
+            // Add a small delay to ensure the previous operations are processed
             Thread.Sleep(100);
 
-            // Ensure the element is properly focused
+            // Ensure the input field is properly focused and cleared using Selenium actions
             sectionInputField.Click();
             sectionInputField.SendKeys(Keys.Control + "a");
             sectionInputField.SendKeys(Keys.Delete);
 
-            // Send new keys
+            // Set the new text in the input field
             sectionInputField.SendKeys(video.Name);
+
 
             // Input video details
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[@data-qa='actions-bar__save-button']"))).Click();
