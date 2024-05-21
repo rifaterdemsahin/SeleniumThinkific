@@ -30,10 +30,20 @@ namespace SeleniumCourseLoader
                 return;
             }
 
+            //var chrome_driver_path = "C:\Program Files\Google\Chrome\Application\chrome.exe";
+
             // Initialize the Chrome options
             ChromeOptions options = new ChromeOptions();
             options.AddArgument(@"user-data-dir=C:\Users\Pexabo\AppData\Local\Google\Chrome\User Data"); // Replace with your Chrome user data path
             options.AddArgument(@"profile-directory=Profile 15"); // Replace with your profile directory
+            options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-dev-shm-usage");
+            options.AddArgument("--disable-gpu")
+                
+                
+                ;
+
+            //options.AddArgument("--headless");
 
             // Initialize the ChromeDriver with a command timeout
             var service = ChromeDriverService.CreateDefaultService();
@@ -88,6 +98,33 @@ namespace SeleniumCourseLoader
                 Logger.Log($"Login failed: {ex.Message}");
             }
         }
+        static bool CheckSectionExists(IWebDriver driver, string sectionTitle)
+        {
+            try
+            {
+                // Locate the section by its title
+                var sections = driver.FindElements(By.CssSelector("h4[data-qa='accordion-title']"));
+
+                foreach (var section in sections)
+                {
+                    if (section.Text.Contains(sectionTitle, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while checking for the section: {ex.Message}");
+                return false;
+            }
+        }
 
         static void ProcessCourses(IWebDriver driver)
         {
@@ -105,14 +142,17 @@ namespace SeleniumCourseLoader
 
                 // Loop through the sections and videos
                 foreach (var section in course.Sections)
-                {
-                    AddChapter(driver, section);
-
-                    // Loop through the videos in each section
-                    foreach (var video in section.Videos)
+                { if (CheckSectionExists(driver,section.Name) == false)
                     {
-                        AddVideo(driver, course.MainUrl, section, video);
+                        AddChapter(driver, section);
+
+                        // Loop through the videos in each section
+                        foreach (var video in section.Videos)
+                        {
+                            AddVideo(driver, course.MainUrl, section, video);
+                        }
                     }
+
                 }
             }
 
