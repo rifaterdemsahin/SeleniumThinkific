@@ -235,11 +235,27 @@ namespace SeleniumCourseLoader
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("label[for='lesson-draft-status']"))).Click();
 
 
+           
+            IWebElement sectionInputField = driver.FindElement(By.XPath("input[data-qa='lesson-form__name']"));
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            
+            // Ensure the element is focused
+            js.ExecuteScript("arguments[0].focus();", sectionInputField);
+            // Clear the field using JavaScript
+            js.ExecuteScript("arguments[0].value='';", sectionInputField);
 
+            // Add a small delay
+            Thread.Sleep(100);
 
+            // Ensure the element is properly focused
+            sectionInputField.Click();
+            sectionInputField.SendKeys(Keys.Control + "a");
+            sectionInputField.SendKeys(Keys.Delete);
+
+            // Send new keys
+            sectionInputField.SendKeys(video.Name);
 
             // Input video details
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("input[data-qa='lesson-form__name']"))).SendKeys(video.Name);
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[@data-qa='actions-bar__save-button']"))).Click();
             Thread.Sleep(5000);
 
