@@ -1,10 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 using System.Threading;
+using SeleniumExtras.WaitHelpers;
 
 namespace SeleniumCourseLoader
 {
@@ -20,9 +22,10 @@ namespace SeleniumCourseLoader
                 .AddJsonFile("F:\\source\\SeleniumThinkific\\SeleniumThinkific\\appsettings.json", optional: true, reloadOnChange: true);
             IConfigurationRoot configuration = builder.Build();
 
-            // Retrieve email and password from configuration
+            // Retrieve email, password, and browser from configuration
             string email = configuration["Login:Email"];
             string password = configuration["Login:Password"];
+            string browser = configuration["Browser"];
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
@@ -30,28 +33,19 @@ namespace SeleniumCourseLoader
                 return;
             }
 
-            //var chrome_driver_path = "C:\Program Files\Google\Chrome\Application\chrome.exe";
-
-            // Initialize the Chrome options
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument(@"user-data-dir=C:\Users\Pexabo\AppData\Local\Google\Chrome\User Data"); // Replace with your Chrome user data path
-            options.AddArgument(@"profile-directory=Profile 15"); // Replace with your profile directory
-            options.AddArgument("--no-sandbox");
-            options.AddArgument("--disable-dev-shm-usage");
-            options.AddArgument("--disable-gpu")
-                
-                
-                ;
-
-            //options.AddArgument("--headless");
-
-            // Initialize the ChromeDriver with a command timeout
-            var service = ChromeDriverService.CreateDefaultService();
-            var driver = new ChromeDriver(service, options, TimeSpan.FromMinutes(3)); // Set a 3-minute timeout for commands
-            driver.Manage().Window.Size = new System.Drawing.Size(1273, 672);
-
+            IWebDriver driver = null;
             try
             {
+                // Initialize the WebDriver based on the specified browser
+                driver = InitializeWebDriver(browser, configuration);
+                if (driver == null)
+                {
+                    Logger.Log("Unsupported browser specified in the configuration file.");
+                    return;
+                }
+
+                driver.Manage().Window.Size = new System.Drawing.Size(1273, 672);
+
                 // Navigate to login page
                 Logger.Log("Navigating to login page...");
                 driver.Navigate().GoToUrl("https://courses.devops.engineering/users/sign_in");
@@ -69,10 +63,40 @@ namespace SeleniumCourseLoader
             finally
             {
                 // Close the browser
-                driver.Quit();
+                driver?.Quit();
             }
 
             Logger.Log("Program ended!");
+        }
+
+        static IWebDriver InitializeWebDriver(string browser, IConfigurationRoot configuration)
+        {
+            if (browser.Equals("Chrome", StringComparison.OrdinalIgnoreCase))
+            {
+                ChromeOptions options = new ChromeOptions();
+                options.AddArgument($"user-data-dir={configuration["Chrome:UserDataDir"]}");
+                options.AddArgument($"profile-directory={configuration["Chrome:ProfileDirectory"]}");
+                options.AddArgument("--no-sandbox");
+                options.AddArgument("--disable-dev-shm-usage");
+                options.AddArgument("--disable-gpu");
+
+                var service = ChromeDriverService.CreateDefaultService();
+                return new ChromeDriver(service, options, TimeSpan.FromMinutes(3));
+            }
+            else if (browser.Equals("Firefox", StringComparison.OrdinalIgnoreCase))
+            {
+                FirefoxOptions options = new FirefoxOptions();
+                options.AddArgument($"-profile");
+                options.AddArgument(configuration["Firefox:ProfilePath"]);
+                options.AddArgument("--no-sandbox");
+                options.AddArgument("--disable-dev-shm-usage");
+                options.AddArgument("--disable-gpu");
+
+                var service = FirefoxDriverService.CreateDefaultService();
+                return new FirefoxDriver(service, options, TimeSpan.FromMinutes(3));
+            }
+
+            return null;
         }
 
         static void PerformLogin(IWebDriver driver, string email, string password)
@@ -80,17 +104,18 @@ namespace SeleniumCourseLoader
             try
             {
                 Logger.Log("Performing login...");
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
                 // Enter email and password, and click the sign-in button
-                driver.FindElement(By.Id("user[email]")).SendKeys(email);
+                wait.Until(ExpectedConditions.ElementIsVisible(By.Id("user[email]"))).SendKeys(email);
                 driver.FindElement(By.Id("user[password]")).SendKeys(password);
                 driver.FindElement(By.CssSelector(".button-primary")).Click();
 
                 // Wait and re-enter email and password if needed
-                Thread.Sleep(5000);
-                driver.FindElement(By.Id("user[email]")).SendKeys(email);
+                wait.Until(ExpectedConditions.ElementIsVisible(By.Id("user[email]"))).SendKeys(email);
                 driver.FindElement(By.Id("user[password]")).SendKeys(password);
-                Thread.Sleep(5000);
-                driver.FindElement(By.CssSelector(".button-primary")).Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".button-primary"))).Click();
+
                 Logger.Log("Login performed successfully.");
             }
             catch (Exception ex)
@@ -98,12 +123,13 @@ namespace SeleniumCourseLoader
                 Logger.Log($"Login failed: {ex.Message}");
             }
         }
+
         static bool CheckSectionExists(IWebDriver driver, string sectionTitle)
         {
             try
             {
-                // Locate the section by its title
-                var sections = driver.FindElements(By.CssSelector("h4[data-qa='accordion-title']"));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                var sections = wait.Until(d => d.FindElements(By.CssSelector("h4[data-qa='accordion-title']")));
 
                 foreach (var section in sections)
                 {
@@ -142,7 +168,8 @@ namespace SeleniumCourseLoader
 
                 // Loop through the sections and videos
                 foreach (var section in course.Sections)
-                { if (CheckSectionExists(driver,section.Name) == false)
+                {
+                    if (!CheckSectionExists(driver, section.Name))
                     {
                         AddChapter(driver, section);
 
@@ -152,7 +179,6 @@ namespace SeleniumCourseLoader
                             AddVideo(driver, course.MainUrl, section, video);
                         }
                     }
-
                 }
             }
 
@@ -162,21 +188,20 @@ namespace SeleniumCourseLoader
         static void AddChapter(IWebDriver driver, Section section)
         {
             Logger.Log($"Adding chapter: {section.Name}");
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
             // Click on the "Add chapter" button
-            driver.FindElement(By.CssSelector("button[data-qa='add-chapter__btn']")).Click();
-            Thread.Sleep(1000);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button[data-qa='add-chapter__btn']"))).Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@data-qa='chapter-name__input']"))).SendKeys(section.Name);
 
             // Input section details
             IWebElement sectionInputField = driver.FindElement(By.XPath("//input[@data-qa='chapter-name__input']"));
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("arguments[0].value='';", sectionInputField);
-            Thread.Sleep(500);
-
             sectionInputField.Clear();
             sectionInputField.SendKeys(section.Name);
 
-            IWebElement saveButton = driver.FindElement(By.CssSelector("button[data-qa='actions-bar__save-button']"));
-            saveButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button[data-qa='actions-bar__save-button']"))).Click();
             Thread.Sleep(5000);
 
             string url = driver.Url;
@@ -195,24 +220,18 @@ namespace SeleniumCourseLoader
             driver.Navigate().GoToUrl(mainUrl + "/chapters/" + section.ChapterId + "/contents/new_video_lesson");
             Thread.Sleep(7000);
 
-            // Locate and click the label to toggle the draft checkbox
-            IWebElement labelForCheckbox = driver.FindElement(By.CssSelector("label[for='lesson-draft-status']"));
-            labelForCheckbox.Click();
-            Thread.Sleep(500);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("label[for='lesson-draft-status']"))).Click();
 
             // Input video details
-            IWebElement videoInputField = driver.FindElement(By.CssSelector("input[data-qa='lesson-form__name']"));
-            videoInputField.Clear();
-            videoInputField.SendKeys(video.Name);
-
-            IWebElement saveVideoButton = driver.FindElement(By.XPath("//button[@data-qa='actions-bar__save-button']"));
-            saveVideoButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("input[data-qa='lesson-form__name']"))).SendKeys(video.Name);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[@data-qa='actions-bar__save-button']"))).Click();
             Thread.Sleep(5000);
 
             try
             {
                 // Handle the toast message if it appears
-                IWebElement toastMessage = driver.FindElement(By.CssSelector("div[class^='Toast_toast__message_']"));
+                IWebElement toastMessage = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[class^='Toast_toast__message_']")));
                 toastMessage.Click();
                 Thread.Sleep(1000);
             }
