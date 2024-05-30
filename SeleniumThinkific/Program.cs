@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+﻿using OpenQA.Selenium; 
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
@@ -94,6 +94,7 @@ namespace SeleniumCourseLoader
                 options.AddArgument("--no-sandbox");
                 options.AddArgument("--disable-dev-shm-usage");
                 options.AddArgument("--disable-gpu");
+                //options.AddArgument("--headless");
 
                 var service = FirefoxDriverService.CreateDefaultService();
                 return new FirefoxDriver(service, options, TimeSpan.FromMinutes(3));
