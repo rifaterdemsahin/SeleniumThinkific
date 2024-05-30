@@ -10,6 +10,9 @@ using SeleniumExtras.WaitHelpers;
 
 namespace SeleniumCourseLoader
 {
+    /// <summary>
+    /// Working in the class submitting it to github
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
