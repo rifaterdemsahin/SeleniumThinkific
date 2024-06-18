@@ -23,7 +23,7 @@ Setting up online courses can be a repetitive and time-consuming task. This proj
 
 ## Installation
 ### Prerequisites
-- Python 3.x
+- VS 2022
 - Selenium
 - Chrome WebDriver
 
@@ -49,13 +49,9 @@ Setting up online courses can be a repetitive and time-consuming task. This proj
 1. **Set up your Thinkific account:**
    - Register for a free account on Thinkific: [Thinkific Registration](https://thinkific.com/)
 
-2. **Update the configuration:**
-   - Edit the `config.py` file to include your Thinkific credentials and course details.
-
-3. **Run the script:**
-   ```bash
-   python create_courses.py
-   ```
+2. **Update the VS2022:**
+   - Create a console app
+   - Install selenium dependencies
 
 4. **Verify:**
    - Check your Thinkific account to verify that the course sections and videos have been created.
