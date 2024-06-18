@@ -34,9 +34,10 @@ Setting up online courses can be a repetitive and time-consuming task. This proj
    cd sample-capstone-project
    ```
 
-2. **Install the required packages:**
+2. **Install the required programs:**
    ```bash
-   pip install -r requirements.txt
+   choco install chrome -y
+   choco install firefox -y
    ```
 
 3. **Download and install Chrome WebDriver:**
