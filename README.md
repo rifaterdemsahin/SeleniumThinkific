@@ -1,5 +1,3 @@
-Sure! Here's an improved version of your GitHub README for the sample capstone project:
-
 # Sample Capstone Project: Automating Thinkific Course Creation with Selenium
 
 ## Overview
